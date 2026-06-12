@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-schubart-1: #1a1a1a; /* Dark text */
+  --color-schubart-2: #4a4a4a; /* Secondary text */
+  --color-schubart-3: #d1d1d1; /* Border color */
+  --color-schubart-4: #707070; /* Muted text */
+  --color-schubart-5: #a1815b; /* Gold/Bronze highlight */
+  --color-schubart-6: #ffffff; /* Background */
+
+  --font-pp-hatton: var(--font-pp-hatton), serif;
+  --font-epicene-text: var(--font-epicene-text), sans-serif;
+  
+  /* Fluid Typography - Scales between 320px and 1440px */
+  --text-headlines-l: clamp(2.25rem, 5vw + 1rem, 3.5rem);
+  --text-headlines-m: clamp(1.75rem, 4vw + 0.75rem, 2.75rem);
+  --text-headlines-s: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);
+  --text-body-xl: clamp(1.125rem, 1vw + 0.875rem, 1.25rem);
+  --text-body-m: clamp(0.9375rem, 0.5vw + 0.8125rem, 1rem);
+  --text-body-s: clamp(0.8125rem, 0.5vw + 0.6875rem, 0.875rem);
+  --text-body-xs: 0.75rem;
+  
+  --spacing-section: clamp(4rem, 10vw, 8rem);
+}
+
+@layer base {
+  section {
+    @apply py-[var(--spacing-section)];
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

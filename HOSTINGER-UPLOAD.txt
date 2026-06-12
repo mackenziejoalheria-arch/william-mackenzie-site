@@ -1,0 +1,76 @@
+WILLIAM MACKENZIE - UPLOAD NA HOSTINGER
+=======================================
+
+Resumo importante
+-----------------
+Este projeto e um app Next.js com rotas dinamicas:
+- checkout Stripe em /api/checkout
+- area admin em /admin
+- upload/listagem de gemas em /api/admin/*
+
+Por isso, o melhor caminho e publicar como Node.js Web App na Hostinger.
+Se enviar apenas arquivos estaticos para public_html, o visual pode abrir,
+mas checkout, admin e APIs nao funcionarao corretamente.
+
+
+Arquivo pronto
+--------------
+Use este ZIP:
+  deploy.zip
+
+Ou envie manualmente o conteudo desta pasta:
+  hostinger-upload/
+
+Nao envie:
+- node_modules/
+- .next/
+- .env.local
+
+
+Como subir pelo hPanel
+----------------------
+1. Abra Hostinger hPanel.
+2. Entre em Websites > seu site > Node.js Web App.
+3. Crie ou abra o app Node.js do dominio.
+4. Use Node.js 20.x ou 22.x.
+5. Envie/extract o deploy.zip na pasta raiz do app Node.js.
+   A pasta raiz deve ficar com package.json, src, public, data etc.
+
+Configuracao do app:
+  Framework: Next.js
+  Install command: npm install
+  Build command: npm run build
+  Start command: npm start
+
+
+Variaveis de ambiente
+---------------------
+Copie os valores reais do .env.local do seu PC para:
+Hostinger > Node.js Web App > Environment Variables
+
+Variaveis necessarias:
+  STRIPE_SECRET_KEY=...
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=...
+  NEXT_PUBLIC_SITE_URL=https://www.williammackenzie.com.br
+  NEXT_PUBLIC_GA_MEASUREMENT_ID=G-EGPNKP14WT
+  ADMIN_PASSWORD=senha_forte
+  NODE_ENV=production
+
+Depois de salvar as variaveis, clique em Deploy/Rebuild.
+
+
+Teste depois do deploy
+----------------------
+Abra:
+  https://www.williammackenzie.com.br/
+  https://www.williammackenzie.com.br/pedras/
+  https://www.williammackenzie.com.br/admin/
+
+Teste tambem o checkout Stripe em uma gema/produto.
+
+
+Backup antes de substituir
+--------------------------
+Se ja existir site no servidor, baixe antes:
+  data/gemas.json
+  public/uploads/gemas/

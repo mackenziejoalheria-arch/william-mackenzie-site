@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.williammackenzie.com.br/sitemap.xml
+
+Host: https://www.williammackenzie.com.br

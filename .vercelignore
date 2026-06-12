@@ -1,0 +1,35 @@
+.next
+out
+node_modules
+hostinger-upload
+hostinger-assets-fix
+deploy.zip
+william-mackenzie-hostinger.zip
+Nova pasta
+
+# Old static export files at the project root
+404
+404.html
+aliancas
+aneis-de-formatura
+aneis-de-noivado
+audio
+aviso-legal
+cookies
+ester
+fotos
+images
+politica-de-privacidade
+quem-somos
+reaproveitamento-de-ouro
+video
+_next
+_not-found
+index.html
+index.txt
+__next.*.txt
+.htaccess
+
+# Local-only secrets
+.env.local
+.env.*.local
