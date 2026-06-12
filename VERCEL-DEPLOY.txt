@@ -1,0 +1,86 @@
+VERCEL - PASSO A PASSO
+======================
+
+Status local
+------------
+O projeto ja esta pronto para Vercel:
+- build local passou com npm run build
+- .vercelignore foi criado para nao enviar sobras antigas
+- .env.local nao sera enviado
+- primeiro commit Git local ja foi criado
+
+
+1. Criar repositorio no GitHub
+-----------------------------
+1. Acesse https://github.com/new
+2. Nome sugerido: william-mackenzie-site
+3. Deixe como Private ou Public
+4. Crie SEM README, SEM .gitignore e SEM license
+5. Copie a URL do repositorio
+
+Depois, no terminal desta pasta, rode:
+  git remote add origin URL_DO_REPOSITORIO
+  git branch -M main
+  git push -u origin main
+
+
+2. Importar na Vercel
+---------------------
+1. Acesse https://vercel.com/new
+2. Escolha o repositorio william-mackenzie-site
+3. Framework Preset: Next.js
+4. Build Command: npm run build
+5. Install Command: npm install
+6. Output Directory: deixe vazio/padrao
+
+
+3. Variaveis de ambiente
+------------------------
+Na tela de importacao da Vercel, adicione:
+
+STRIPE_SECRET_KEY
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+NEXT_PUBLIC_SITE_URL
+NEXT_PUBLIC_GA_MEASUREMENT_ID
+ADMIN_PASSWORD
+NODE_ENV
+
+Use os valores reais do arquivo .env.local do seu computador.
+Nao cole esses valores em chats ou arquivos publicos.
+
+NEXT_PUBLIC_SITE_URL deve ficar:
+  https://www.williammackenzie.com.br
+
+NODE_ENV deve ficar:
+  production
+
+
+4. Dominio
+----------
+Depois do deploy:
+1. Abra o projeto na Vercel
+2. Settings > Domains
+3. Adicione:
+   williammackenzie.com.br
+   www.williammackenzie.com.br
+4. A Vercel vai mostrar os registros DNS exatos.
+5. Volte na Hostinger > DNS Zone Editor e copie esses registros.
+
+Em geral:
+- dominio raiz usa registro A
+- www usa registro CNAME
+
+Mas siga sempre o valor mostrado pela Vercel na tela do projeto.
+
+
+5. Testes finais
+----------------
+Teste:
+  /
+  /pedras/
+  /admin/
+  checkout Stripe
+
+Se o admin fizer upload de arquivos, lembre que Vercel nao e ideal para
+armazenamento permanente em disco. Para uploads permanentes, o ideal e
+Vercel Blob, S3, Cloudinary ou outro storage.
