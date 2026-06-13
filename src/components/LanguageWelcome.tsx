@@ -108,7 +108,7 @@ export default function LanguageWelcome() {
     const welcome = getTranslations('pt').welcome;
 
     useEffect(() => {
-        if (!localStorage.getItem('language')) {
+        if (!sessionStorage.getItem('languageWelcomeSeen')) {
             setShow(true);
         }
     }, []);
@@ -125,6 +125,7 @@ export default function LanguageWelcome() {
 
     function choose(lang: Language) {
         setLanguage(lang);
+        sessionStorage.setItem('languageWelcomeSeen', 'true');
         setShow(false);
     }
 
